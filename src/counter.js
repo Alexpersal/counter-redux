@@ -1,13 +1,12 @@
-const INCREMENT = "INCREMENT";
+const INCREMENT = "Counter/INCREMENT";
 export function increment(amount) {
   return { type: INCREMENT, amount };
 }
-const RESET = "RESET";
-export function reset(amount) {
-  return { type: RESET, amount };
+const RESET = "Counter/RESET";
+export function reset() {
+  return { type: RESET };
 }
-export function counter(state, action) {
-  console.log(state);
+export function counter(state = 0, action) {
   switch (action.type) {
     case INCREMENT:
       return state + action.amount;
@@ -17,4 +16,8 @@ export function counter(state, action) {
     default:
       return state;
   }
+}
+
+export function getCount(state) {
+  return state.counter;
 }

@@ -6,7 +6,7 @@ export default function CounterUseReducer() {
   //const counter = (state) => state + 1;
   //const [count, setCount] = useState(0);
 
-  const [count, dispatch] = useReducer(counter(), 0);
+  const [count, dispatch] = useReducer(counter, 0);
 
   return (
     <>
